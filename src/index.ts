@@ -6,10 +6,8 @@ export interface NumRef {
     word: string;
 }
 
-export function numToWord(num: number) { 
-    return _.reduce(numRef, (accum, ref) => {
-        return ref.num === num ? ref.word : accum;
-    }, 'undefined');
+export function numToWord(num: number) {
+    return _.reduce(numRef, (accum, ref) => ref.num === num ? ref.word : accum, 'undefined');
 }
 
 export function wordToNum(word: string) {
