@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/webpack-numbers.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node ./test/index.js",
     "start": "webpack --config webpack.config.js"
   },
   "author": "",

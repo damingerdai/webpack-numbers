@@ -8,6 +8,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'webpack-numbers.js',
         library: 'webpackNumbers',
+        globalObject: 'this',
         libraryTarget: 'umd'
     },
     module: {
@@ -15,6 +16,10 @@ module.exports = {
           {
             test: /\.tsx?$/,
             use: 'ts-loader',
+            include: [
+                path.resolve(__dirname, "src"),
+               
+            ],
             exclude: /node_modules/
           }
         ]
