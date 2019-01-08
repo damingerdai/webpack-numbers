@@ -13,20 +13,27 @@ module.exports = {
     },
     module: {
         rules: [
-          {
-            test: /\.tsx?$/,
-            use: 'ts-loader',
-            include: [
-                path.resolve(__dirname, "src"),
-               
-            ],
-            exclude: /node_modules/
-          }
+            {
+                test: /\.tsx?$/,
+                use: [
+                    {
+                        loader: 'babel-loader'
+                    },
+                    {
+                        loader: 'ts-loader'
+                    }
+                ],
+                include: [
+                    path.resolve(__dirname, "src"),
+
+                ],
+                exclude: /node_modules/
+            }
         ]
-      },
-      resolve: {
-        extensions: [ '.tsx', '.ts', '.js' ]
-      },
+    },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js']
+    },
     plugins: [
         new CleanWebpackPlugin(['dist']),
     ],
