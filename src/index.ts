@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import numRef from './ref.json';
 
-export interface NumRef {
+export interface INumRef {
     num: number;
     word: string;
 }
