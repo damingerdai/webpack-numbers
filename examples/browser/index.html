@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Webpack Number</title>
+    <script src="https://cdn.bootcss.com/lodash.js/4.17.11/lodash.core.js"></script>
+    <script src="./js/webpack-numbers.js"></script>
+</head>
+
+<body>
+    <div>
+        <select id="numberSelect" style="width: 100px" onchange="selectNumberChange()">
+            <option style="display:none">请选择</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <label id="labelNumToWord"></label>
+    </div>
+    <div>
+        <select id="wordSelect" style="width: 100px" onchange="selectWordChange()">
+            <option style="display:none">请选择</option>
+            <option value="Zero">Zero</option>
+            <option value="One">One</option>
+            <option value="Two">Two</option>
+            <option value="Three">Three</option>
+            <option value="Four">Four</option>
+            <option value="Five">Five</option>
+        </select>
+        <label id="labelWordToWord"></label>
+    </div>
+
+    <script>
+        function selectNumberChange() {
+            var obj = document.getElementById('numberSelect');
+            var index = obj.selectedIndex;
+            var value = obj.options[index].value;
+            var labelValue = webpackNumbers.numToWord(parseInt(value,10));
+            document.querySelector('#labelNumToWord').textContent = labelValue;
+        }
+        function selectWordChange() {
+            var obj = document.getElementById('wordSelect');
+            var index = obj.selectedIndex;
+            var value = obj.options[index].value;
+            var labelValue = webpackNumbers.wordToNum(value);
+            document.querySelector('#labelWordToWord').textContent = labelValue;
+        }
+        // function doClick() {
+        //     var value = document.querySelector('#input').value;
+        //     console.log(webpackNumbers.numToWord);
+        //     document.querySelector('#label').textContent = value;
+        // }
+    </script>
+</body>
+
+</html>
