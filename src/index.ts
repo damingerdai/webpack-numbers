@@ -12,4 +12,4 @@ export function numToWord(num: number) {
 
 export function wordToNum(word: string) {
     return _.reduce(numRef, (accum, ref) => ref.word === word && word.toLowerCase() ? ref.num : accum, -1);
-};
+}
